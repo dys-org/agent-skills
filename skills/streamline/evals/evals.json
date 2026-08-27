@@ -1,0 +1,11 @@
+{
+  "skill_name": "streamline",
+  "evals": [
+    {"id": 1, "prompt": "Streamline this branch for reuse, simplification, efficiency, and altitude, then apply safe fixes.", "expected_output": "Reviews all four angles, applies behavior-preserving fixes, and checks changed comments.", "files": []},
+    {"id": 2, "prompt": "Clean up the current diff without changing behavior; use the full parallel cleanup pass.", "expected_output": "Uses four parallel cleanup reviewers when available and consolidates their fixes.", "files": []},
+    {"id": 3, "prompt": "streamline low src/payment.ts", "expected_output": "Runs all four cleanup angles inline on the targeted file and discloses the fallback.", "files": []},
+    {"id": 4, "prompt": "Refactor this one function to reduce nesting and give the variables clearer names.", "expected_output": "Should not select streamline; this is a focused code-simplifier task.", "files": []},
+    {"id": 5, "prompt": "Review this PR for correctness bugs but do not edit anything.", "expected_output": "Should not select streamline; use a read-only review workflow.", "files": []},
+    {"id": 6, "prompt": "The diff is already clean. Run streamline and confirm that no safe quality changes are needed.", "expected_output": "Checks all four angles and comments, makes no speculative edits, and reports the clean result.", "files": []}
+  ]
+}

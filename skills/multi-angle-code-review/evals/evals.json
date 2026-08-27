@@ -1,0 +1,11 @@
+{
+  "skill_name": "multi-angle-code-review",
+  "evals": [
+    {"id": 1, "prompt": "Review this PR across code, tests, error handling, types, comments, and simplification. Keep it read-only.", "expected_output": "A deduplicated, severity-ordered review with evidence from applicable angles.", "files": []},
+    {"id": 2, "prompt": "Run a parallel review of the current branch before I open a PR.", "expected_output": "Independent applicable review angles consolidated into one coherent report.", "files": []},
+    {"id": 3, "prompt": "Review only the tests and error handling in this diff.", "expected_output": "A bounded read-only review emphasizing behavioral coverage and failure paths.", "files": []},
+    {"id": 4, "prompt": "Simplify this deeply nested function and apply the refactor.", "expected_output": "Should not select this read-only review skill; use a focused simplification workflow.", "files": []},
+    {"id": 5, "prompt": "Clean up my changed code for reuse, efficiency, simplification, and altitude, then apply fixes.", "expected_output": "Should not select this review skill; use streamline because fixes are requested.", "files": []},
+    {"id": 6, "prompt": "Review the diff. If no actionable issue remains, return a concise no-findings result without editing files.", "expected_output": "Inspects the diff read-only and reports no actionable findings when appropriate.", "files": []}
+  ]
+}

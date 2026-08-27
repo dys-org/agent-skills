@@ -1,0 +1,5 @@
+interface:
+  display_name: "Streamline"
+  short_description: "Clean up changed code without changing behavior"
+policy:
+  allow_implicit_invocation: false

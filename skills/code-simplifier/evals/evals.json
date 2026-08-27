@@ -1,0 +1,41 @@
+{
+  "skill_name": "code-simplifier",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just implemented a feature and the diff feels too complicated. Simplify the recently modified code without changing behavior, and run whatever narrow checks make sense for this repo.",
+      "expected_output": "Targets recent changes, preserves behavior, applies local conventions, avoids unrelated rewrites, and reports verification.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Clean up the nested conditionals in the files I touched. Please keep the current API and UI behavior exactly the same.",
+      "expected_output": "Reduces nesting with clearer predicates or control flow while preserving public API and UI semantics.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Before I open a PR, polish this branch for readability. Don't add features or broad formatting churn.",
+      "expected_output": "Performs a focused readability pass on branch changes, avoids scope creep, and summarizes meaningful simplifications.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Review this PR for correctness, test gaps, and error handling. Do not edit files.",
+      "expected_output": "Should not select code-simplifier; use a read-only multi-angle review.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Run the full four-angle streamline pass on my branch and apply cleanup fixes.",
+      "expected_output": "Should not select code-simplifier; use streamline for changeset-wide cleanup.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Simplify this parser's nested branches, but preserve its exact exceptions and output ordering; stop if tests do not establish those behaviors.",
+      "expected_output": "Identifies invariants, makes the smallest coherent refactor, and verifies or declines unsafe changes.",
+      "files": []
+    }
+  ]
+}

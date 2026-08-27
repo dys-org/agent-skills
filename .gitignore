@@ -1,0 +1,13 @@
+.DS_Store
+._*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+!.env-example
+.plex-organizer/
+*-workspace/
+tmp/
+temp/
+*.tmp
+

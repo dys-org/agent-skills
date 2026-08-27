@@ -1,0 +1,5 @@
+interface:
+  display_name: "Plex Library Organizer"
+  short_description: "Plan and organize Plex media libraries safely"
+policy:
+  allow_implicit_invocation: false
