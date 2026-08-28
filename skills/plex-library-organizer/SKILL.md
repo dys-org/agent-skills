@@ -1,6 +1,5 @@
 ---
 name: plex-library-organizer
-license: MIT
 description: Organize messy movie and TV libraries for Plex using TMDB for movies and TVDB for series. Use whenever the user wants to rename or restructure media folders, fix Plex matching, clean subtitle files, normalize Specials or extras, remove release junk, or prepare ripped/downloaded media for Plex. Always build a dry-run plan first, surface low-confidence matches and collisions, and only apply changes after explicit user confirmation.
 disable-model-invocation: true
 ---

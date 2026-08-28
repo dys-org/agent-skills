@@ -1,34 +1,53 @@
 ---
 name: streamline
-license: MIT
-description: Clean up changed code for clarity, reuse, and efficiency while preserving observable behavior. Use only when explicitly invoked for a quality-focused cleanup pass, not for correctness review.
+description: Clean up changed code for clarity, reuse, and efficiency while preserving observable behavior. Use only when explicitly invoked for a quality-focused cleanup pass, not to find bugs.
 disable-model-invocation: true
-compatibility: Requires repository access and git; uses independent parallel review when available and otherwise runs inline.
 ---
 
 # Streamline
 
-Clean up the changed code without changing observable behavior. This is a quality cleanup pass, not a correctness or bug review: do not fix behavior merely because it seems wrong.
+Improve the changed code without altering its observable behavior. This is a quality-cleanup pass, not a correctness review. Do not fix behavior merely because it appears wrong.
 
 ## Route the review
 
-Review all four perspectives in the current context when the invocation includes `low` as a standalone mode immediately after the skill name OR when independent parallel delegation is unavailable. Otherwise, assign one independent reviewer to each perspective in parallel. Use the same workflow in either case. Treat any remaining text as the review target.
+When the invocation includes `low` immediately after the skill name or independent parallel delegation is unavailable, review all four perspectives in the current context. Otherwise, assign one independent reviewer to each perspective and run them concurrently. Use the same workflow in either case. Treat any remaining text as the review target.
 
-If the invocation names an explicit target, review it. Otherwise use `git diff @{upstream}...HEAD`, falling back to `git diff main...HEAD` and then `git diff HEAD~1`. Include `git diff HEAD` when the working tree has changes or the range diff is empty.
+If the invocation names a PR, branch, file, or other explicit target, review that target. Otherwise, use `git diff @{upstream}...HEAD`, falling back to `git diff main...HEAD` and then `git diff HEAD~1`. Include `git diff HEAD` when the working tree has changes or the range diff is empty. The resulting changes are the review scope.
 
-## Review and clean up
+### Phase 1 — Review
 
-Inspect the target and its surrounding code, then review exactly these four perspectives:
+Examine the scoped changes from each perspective below. Record every actionable finding with its `file`, `line`, a one-sentence `summary`, the concrete cost it introduces, and the proposed correction.
 
-1. **Reuse** — existing helpers, utilities, or abstractions that should be reused instead of duplicated.
-2. **Simplification** — redundant state, duplication, nesting, dead code, or single-use temporary aliases that add no meaning and can be removed or made clearer.
-3. **Efficiency** — repeated expensive work or avoidable retention that can be reduced without changing behavior.
-4. **Abstraction depth** — special cases placed at the wrong level; prefer the general underlying mechanism when it preserves behavior and keeps the change in scope.
+#### Reuse
 
-Normalize and deduplicate findings across perspectives. Apply only fixes whose behavior is preserved. Skip and document findings that risk intended behavior, require broad changes outside the target, or are false positives. Do not add generic refactoring advice, correctness fixes, or unrelated edits.
+Look in adjacent files and shared or utility modules for existing code that already provides a capability introduced by the change. Identify the specific helper or abstraction to reuse instead of maintaining another implementation.
 
-## Finalize
+#### Simplification
 
-Reread the final diff. Inspect every added or changed comment. Keep comments only when they explain a non-obvious invariant, gotcha, external constraint, or why a simpler-looking alternative is wrong; PREFER ONE LINE. Remove comments that restate code, narrate control flow or the change, or duplicate readable signatures or types. In tests, prefer expressive test names unless setup intent is non-obvious. Preserve directives and annotations consumed by tooling.
+Find complexity that does not contribute behavior: information stored more than once or derivable from other state, copied blocks with minor differences, avoidable nesting, unreachable leftovers, and single-use aliases that merely rename an expression. Describe the smallest clearer equivalent.
 
-End with a terse summary of fixes and skips (or that the target was already clean), and truthfully state whether parallel or inline mode ran.
+#### Efficiency
+
+Find work the change performs more often or earlier than necessary, including repeated computation, repeated file or network access, independent operations performed serially, and eager work added to initialization or frequently used paths.
+
+For callbacks, closures, or other long-lived values, check whether they retain a larger surrounding environment than they need. When that retention is material, prefer an object that owns only the required data. State what computation, I/O, waiting, or retained state the correction removes.
+
+#### Abstraction depth
+
+Check whether the change belongs at the layer where it was implemented. When a caller-specific exception compensates for behavior owned by shared infrastructure, prefer the smallest general correction at the owning layer, provided it preserves intended behavior and remains within scope.
+
+Do not introduce correctness fixes, unrelated edits, or generic refactoring advice.
+
+### Phase 2 — Apply the fixes
+
+Wait until all four perspectives are complete. Merge findings that describe the same underlying mechanism, then apply each unique correction directly.
+
+Apply only changes that preserve intended behavior. Skip a finding when its correction would alter intent, require broad work outside the review scope, or prove to be a false positive. Record every skip briefly.
+
+### Phase 3 — Check comments and summarize
+
+Re-read the final diff and inspect every added or modified comment. Keep a comment only when it explains a non-obvious invariant, external constraint, surprising caveat, or why an apparently simpler alternative is invalid. PREFER ONE LINE.
+
+Remove comments that repeat readable code, narrate control flow or the current change, or duplicate information already expressed by names, signatures, or types. In tests, prefer an expressive test name unless the setup has non-obvious intent. Preserve directives and annotations consumed by tooling.
+
+Correct every comment violation before finishing. Then give a terse summary of the fixes and skips, or state that the reviewed code was already clean. Disclose whether the review used four independent reviewers in parallel or covered all four perspectives in the current context.

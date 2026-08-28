@@ -1,6 +1,5 @@
 ---
 name: code-simplifier
-license: MIT
 description: Simplify specific code for readability and maintainability while preserving behavior. Use when the user explicitly asks to reduce complexity, nesting, duplication, or indirection; clarify control flow; or improve naming and structure. This is a focused refactor, not a comprehensive diff or PR cleanup pass.
 ---
 

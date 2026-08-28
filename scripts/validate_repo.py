@@ -25,13 +25,11 @@ for skill_dir in sorted((ROOT / "skills").iterdir()):
         if ":" in line and not line.startswith(" "):
             key, value = line.split(":", 1)
             fields[key] = value.strip()
-    for required in ("name", "description", "license"):
+    for required in ("name", "description"):
         if not fields.get(required):
             errors.append(f"{skill_file}: missing {required}")
     if fields.get("name") != skill_dir.name:
         errors.append(f"{skill_file}: name does not match directory")
-    if fields.get("license") != "MIT":
-        errors.append(f"{skill_file}: license must be MIT")
     names.append(fields.get("name"))
 
     for reference in re.findall(r"`((?:scripts|references|assets)/[^`\s]+)`", text):
