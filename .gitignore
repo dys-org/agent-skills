@@ -11,3 +11,4 @@ tmp/
 temp/
 *.tmp
 
+.vscode/
