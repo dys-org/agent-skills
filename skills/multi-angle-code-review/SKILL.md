@@ -1,6 +1,5 @@
 ---
 name: multi-angle-code-review
-license: MIT
 description: Run a comprehensive code review across multiple quality angles. Use when the user asks to review a PR, branch, diff, or recent changes; wants targeted feedback on tests, comments, error handling, types, simplification, or overall code quality; or explicitly requests a parallel, subagent, or orchestrated review. Prefer this skill for multi-aspect code review before opening a PR or after review feedback lands.
 disable-model-invocation: true
 ---
