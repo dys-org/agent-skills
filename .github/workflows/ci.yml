@@ -15,7 +15,7 @@ jobs:
       - name: Confirm Skills CLI discovery
         run: |
           npx --yes skills@1.5.23 add . --list | tee /tmp/skills-list.txt
-          for skill in code-simplifier multi-angle-code-review plex-library-organizer streamline; do
+          for skill in code-simplifier multi-angle-code-review plex-library-organizer prose streamline; do
             grep -F "$skill" /tmp/skills-list.txt
           done
       - name: Validate collection
@@ -24,4 +24,5 @@ jobs:
         run: python3 -m compileall -q skills tests scripts
       - name: Run organizer unit tests
         run: python3 -m unittest discover -s tests -v
-
+      - name: Run prose unit tests
+        run: python3 -m unittest discover -s skills/prose/tests -v

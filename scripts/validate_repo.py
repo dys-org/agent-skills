@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
-EXPECTED = {"code-simplifier", "multi-angle-code-review", "plex-library-organizer", "streamline"}
+EXPECTED = {"code-simplifier", "multi-angle-code-review", "plex-library-organizer", "prose", "streamline"}
 errors = []
 
 actual = {path.name for path in (ROOT / "skills").iterdir() if path.is_dir()}

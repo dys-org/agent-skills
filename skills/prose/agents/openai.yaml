@@ -1,0 +1,5 @@
+interface:
+  display_name: "Prose"
+  short_description: "Remove obvious AI tropes from prose"
+policy:
+  allow_implicit_invocation: false

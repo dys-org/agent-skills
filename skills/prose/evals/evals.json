@@ -1,0 +1,114 @@
+{
+  "skill_name": "prose",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a polished, energetic launch announcement of 50 to 80 words from these facts: Acme added CSV export to the reports page. Admins can choose a date range before exporting. Existing role permissions still apply. The feature becomes available on October 8. Return only the announcement.",
+      "expected_output": "A specific launch announcement that includes every supplied fact, invents nothing, and avoids dramatic pivots, abstract marketing language, forced cadence, false suspense, generic warmth, and dash punctuation.",
+      "files": [],
+      "expectations": [
+        "The announcement is between 50 and 80 words.",
+        "The announcement states that CSV export was added to the reports page and becomes available on October 8.",
+        "The announcement states that admins can choose a date range and that existing role permissions still apply.",
+        "The announcement contains no em dash, en dash used as a sentence dash, or spaced hyphen used as a sentence dash.",
+        "The announcement contains no false suspense, manufactured contrast, abstract cliche, generic human-centered polish, or grand conclusion.",
+        "The announcement invents no feature, metric, customer claim, benefit, implementation detail, or step-by-step usage instruction."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write a strong closing paragraph for a recap using only these facts: 18 people attended the workshop. They worked in six teams. Two teams produced working prototypes. The follow-up session is November 3. Return only the paragraph.",
+      "expected_output": "A concrete closing paragraph that uses the supplied results and next step without turning them into a broad lesson or invented claim.",
+      "files": [],
+      "expectations": [
+        "The paragraph preserves all supplied facts: 18 attendees, six teams, two working prototypes, and the November 3 follow-up.",
+        "The paragraph contains no em dash, false suspense, abstract cliche, manufactured contrast, or sweeping lesson.",
+        "The paragraph ends with a concrete workshop result or the November 3 next step.",
+        "The paragraph invents no participant reaction, lesson, future outcome, or claim about the workshop's importance."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Audit this paragraph for AI tropes, but do not rewrite the paragraph: 'Think of it as a Swiss Army knife for the ever-evolving data landscape. It is more than a dashboard; it serves as a reminder that meaningful connection matters.'",
+      "expected_output": "An audit that quotes each relevant phrase, names its trope, and proposes a concrete revision without replacing the paragraph wholesale.",
+      "files": [],
+      "expectations": [
+        "The audit identifies the patronizing analogy in 'Think of it as a Swiss Army knife'.",
+        "The audit identifies 'ever-evolving data landscape' as an abstract cliche.",
+        "The audit identifies both the 'more than' pivot and the 'serves as' dodge.",
+        "The audit identifies 'meaningful connection' as unsupported generic polish.",
+        "The audit's own explanatory prose contains no em dash or en dash used as a sentence dash.",
+        "Every audit item explains why the wording weakens this specific passage.",
+        "The response proposes revisions for the hits without returning a rewritten replacement paragraph."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Revise the prose around the fixed material below. Preserve the quotation, version range, and compound word exactly. Text: The migration guide—an essential resource—serves as a bridge for every team. The maintainer wrote, 'Do not merge—schema v3 is still rolling out.' These rules apply to versions 2.4–2.7 and every user-facing warning. Ultimately, this thoughtful experience empowers users.",
+      "expected_output": "A direct revision that removes dash clauses and vague filler from editable prose while preserving the quoted sentence, the numeric en dash in the version range, and the compound-word hyphen exactly.",
+      "files": [],
+      "expectations": [
+        "The exact quotation 'Do not merge—schema v3 is still rolling out.' remains unchanged.",
+        "The exact version range '2.4–2.7' remains unchanged.",
+        "The compound word 'user-facing' remains hyphenated.",
+        "Outside the fixed quotation and numeric range, the revision contains no em dash, en dash used as a sentence dash, or spaced hyphen used as a sentence dash.",
+        "The editable prose no longer contains 'serves as a bridge', 'Ultimately', 'thoughtful experience', or 'empowers users'.",
+        "The revision does not invent a claim that the guide explains steps, checks, procedures, or other unspecified content."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Lightly edit this policy note for clarity. Preserve any concrete distinction or naturally necessary list: 'The endpoint accepts JSON, not XML. Every incident report must include the owner, due date, and current status. Send the report to the on-call engineer before 10 a.m.' Return only the edited note unless you intentionally retain a flagged trope.",
+      "expected_output": "The clean policy note remains essentially unchanged. The meaningful JSON/XML distinction and necessary three-field list survive because they are concrete rather than ornamental.",
+      "files": [],
+      "expectations": [
+        "The output preserves the distinction that the endpoint accepts JSON and rejects XML.",
+        "The output preserves all three required incident-report fields: owner, due date, and current status.",
+        "The output preserves the deadline and recipient: the on-call engineer before 10 a.m.",
+        "The output does not manufacture new requirements or remove concrete information.",
+        "The output does not add an unnecessary intentional-exceptions note."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Revise this personal project note while keeping its first-person opinion and uncertainty: 'I wanted to love the new editor. Here is where it gets interesting. It is not just faster, but a deeply human and thoughtful experience. I am still not sure I trust the sync process, though. Ultimately, that tension is a testament to the ever-evolving landscape of local-first software.' Return only the revision unless an intentional exception remains.",
+      "expected_output": "A specific first-person note that keeps the writer's mixed reaction and uncertainty while removing suspense, manufactured contrast, generic warmth, cliches, and the grand abstract ending.",
+      "files": [],
+      "expectations": [
+        "The revision preserves that the writer wanted to like the editor.",
+        "The revision preserves the claim that the editor is faster and the uncertainty about trusting sync.",
+        "The revision retains a natural first-person voice rather than becoming an impersonal summary.",
+        "The revision contains none of these phrases: 'Here is where it gets interesting', 'not just', 'deeply human', 'thoughtful experience', 'Ultimately', 'testament', or 'ever-evolving landscape'.",
+        "The revision preserves the degree of uncertainty without strengthening it into rejection, distrust, or a declaration that the writer is conflicted.",
+        "The revision does not invent evidence or resolve the writer's uncertainty."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Explain this API rate limit to a developer who is new to the service. Make it approachable and use an analogy if helpful. Facts: each API key may send 100 requests per minute; excess requests receive HTTP 429; the Retry-After header gives the number of seconds to wait. Return only the explanation.",
+      "expected_output": "A direct explanation of the exact rate-limit behavior that does not reach for a patronizing or generic analogy.",
+      "files": [],
+      "expectations": [
+        "The explanation states the limit of 100 requests per minute for each API key.",
+        "The explanation states that excess requests receive HTTP 429 and that Retry-After gives the wait in seconds.",
+        "The explanation does not use 'Think of it as', a traffic metaphor, a bucket metaphor, a Swiss Army knife comparison, or 'Imagine'.",
+        "The explanation contains no em dash, false suspense, manufactured contrast, or invented behavior.",
+        "The explanation does not add unsupplied advice to track requests, pause at the limit, or implement a retry strategy."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Write warm homepage copy of 30 to 55 words for a scheduling tool. Facts: clients choose from open appointment times; the tool sends email reminders 24 hours before the appointment; owners can block time from the calendar. Return only the copy.",
+      "expected_output": "Concrete homepage copy that explains the scheduling behavior without generic claims about empowerment, meaningful connection, thoughtful experiences, or intentional design.",
+      "files": [],
+      "expectations": [
+        "The homepage copy is between 30 and 55 words.",
+        "The copy states that clients choose open appointment times, reminders go out by email 24 hours before, and owners can block calendar time.",
+        "The copy contains none of these phrases or close substitutes: 'empowering users', 'meaningful connection', 'thoughtful experience', 'intentional design', 'deeply human', or 'designed with you in mind'.",
+        "The copy contains no em dash, false suspense, manufactured contrast, abstract cliche, or grand conclusion.",
+        "The copy invents no integration, automation, business result, customer reaction, or product capability.",
+        "The copy does not repeat the reminder, availability, or calendar-blocking facts to fill the requested length."
+      ]
+    }
+  ]
+}
