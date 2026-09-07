@@ -2,7 +2,6 @@
 name: prose
 description: Draft, revise, or audit human-facing prose to remove obvious AI writing tropes while preserving meaning and voice. Use when the user explicitly invokes prose or asks to check writing for AI tells such as em dashes, contrastive pivots, forced three-item lists, abstract cliches, false suspense, patronizing analogies, pompous connector phrases, generic warmth, or grand conclusions.
 disable-model-invocation: true
-compatibility: Requires Python 3 for the deterministic final lint.
 ---
 
 # Prose
@@ -95,14 +94,6 @@ Run these checks in order:
 For the first check, trace every content-contract item to its wording in the result. Revise if an item has no match. Then trace every factual or benefit claim in the result back to the source. Remove anything without a match. Keep this trace private.
 
 Search the finished response for em dashes before returning it. Check each en dash and hyphen surrounded by spaces. Keep only a legitimate range, established notation, compound-word hyphen, or punctuation inside fixed text.
-
-Write the candidate response to a temporary text file and run:
-
-```bash
-python3 scripts/lint_prose.py <candidate-file>
-```
-
-Resolve the script path relative to this skill directory. Fix every reported hit and rerun the linter until it exits successfully. The linter ignores quoted material, inline code, fenced code, and numeric ranges because those may be fixed text. Review those regions manually only when they are assistant-authored prose.
 
 For a draft or rewrite, return the requested prose in its requested format. Add an `Intentional exceptions` note only when a flagged pattern remains outside fixed text. Name the exact phrase and why it earns its place.
 

@@ -37,7 +37,7 @@ npx skills remove streamline
 Pin an immutable release or commit by using a Git URL:
 
 ```bash
-npx skills add https://github.com/dys-org/agent-skills.git#v0.2.0 --skill prose
+npx skills add https://github.com/dys-org/agent-skills.git#v0.2.1 --skill prose
 npx skills add https://github.com/dys-org/agent-skills/archive/<commit-sha>.zip --skill streamline
 ```
 
