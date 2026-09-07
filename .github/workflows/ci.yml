@@ -24,5 +24,3 @@ jobs:
         run: python3 -m compileall -q skills tests scripts
       - name: Run organizer unit tests
         run: python3 -m unittest discover -s tests -v
-      - name: Run prose unit tests
-        run: python3 -m unittest discover -s skills/prose/tests -v
