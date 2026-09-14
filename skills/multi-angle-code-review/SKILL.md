@@ -101,11 +101,12 @@ If there are no actionable findings, say so once instead of returning empty sect
 
 ### tests
 
-- Look for missing behavioral coverage, not just line coverage
-- Check happy path, edge cases, failure paths, and regression risk
-- Prefer precise tests over snapshot noise
-- Notice when tests exist but do not actually verify the changed contract
-- Explain what regression each proposed test would catch
+- Evaluate added or changed tests by the meaningful regressions they would catch, not by line coverage
+- Flag tests that duplicate existing coverage, verify implementation details, or depend unnecessarily on internal structure
+- Flag brittle tests whose failures would not indicate broken observable behavior
+- Check for missing behavior, edge cases, and failure paths
+- Prefer a small set of precise, high-signal tests over broad snapshots or repetitive cases
+- Support each recommendation with evidence: identify the existing coverage, the observable contract, or the regression the test would catch
 
 ### errors
 
