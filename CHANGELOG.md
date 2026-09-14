@@ -2,6 +2,13 @@
 
 All notable collection-level changes are recorded here. This project uses Semantic Versioning.
 
+## [0.3.0](https://github.com/dys-org/agent-skills/compare/v0.2.2...v0.3.0) (2026-09-14)
+
+
+### Features
+
+* default reviews to single context ([#6](https://github.com/dys-org/agent-skills/issues/6)) ([019fdb9](https://github.com/dys-org/agent-skills/commit/019fdb9f6868b46a40d207e6dd6f6aa548658431))
+
 ## [Unreleased]
 
 ## [0.2.2] - 2026-09-13
