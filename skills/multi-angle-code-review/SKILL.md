@@ -11,7 +11,7 @@ Review the current changeset across the applicable quality angles and return a c
 
 ## Execution mode
 
-By default, assign each applicable review angle to an independent reviewer and run them in parallel. If `low` appears immediately after the skill name, review all applicable angles yourself in one integrated pass; treat any remaining text as the review target or angle selection. If parallel delegation is unavailable, use the `low` behavior.
+By default, review all applicable angles yourself in one integrated pass. If `high` appears immediately after the skill name, assign each applicable review angle to an independent reviewer and run them in parallel; treat any remaining text as the review target or angle selection. If parallel delegation is unavailable, use the default single-context behavior.
 
 ## Core principles
 
@@ -53,7 +53,7 @@ Apply each angle's guidance to the relevant diff and nearby code. Read tests or 
 
 For parallel review, give each reviewer the review scope, changed files, repository constraints, the read-only requirement, and its angle-specific guidance. Do not repeat delegated angles in the primary context.
 
-If the user explicitly requested delegation but it is unavailable, mention that the integrated review was used instead.
+If `high` requested delegation but it is unavailable, mention that the integrated review was used instead.
 
 ### 4. Severity rules
 
