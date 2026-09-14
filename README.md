@@ -1,6 +1,6 @@
 # Agent Skills
 
-Five portable agent skills authored and maintained by dys-org. GitHub is the canonical source; this collection is not published to npm and does not require npm publication.
+Portable agent skills authored and maintained by dys-org. GitHub is the canonical source; this collection is not published to npm and does not require npm publication.
 
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
@@ -37,7 +37,7 @@ npx skills remove streamline
 Pin an immutable release or commit by using a Git URL:
 
 ```bash
-npx skills add https://github.com/dys-org/agent-skills.git#v0.2.1 --skill prose
+npx skills add https://github.com/dys-org/agent-skills.git#v0.2.2 --skill prose
 npx skills add https://github.com/dys-org/agent-skills/archive/<commit-sha>.zip --skill streamline
 ```
 
@@ -47,4 +47,6 @@ The organizer requires Python 3.10+, network access, and TMDB and/or TVDB creden
 
 ## Releases
 
-The collection uses manual collection-level SemVer recorded in [`CHANGELOG.md`](CHANGELOG.md). Release tags pin the complete five-skill collection.
+The collection uses automated collection-level SemVer. Conventional `feat:` changes propose a minor release, `fix:` changes propose a patch release, and breaking changes propose a major release.
+
+After releasable changes reach `main`, Release Please opens or updates a release PR containing the next version in [`version.txt`](version.txt) and the generated [`CHANGELOG.md`](CHANGELOG.md) entries. Maintainers review that PR and merge it only after CI passes; the merge creates the version tag and GitHub release. Release tags pin the complete skill collection.
