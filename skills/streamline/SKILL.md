@@ -10,7 +10,7 @@ Improve the changed code without altering its observable behavior. This is a qua
 
 ## Route the review
 
-When the invocation includes `low` immediately after the skill name or independent parallel delegation is unavailable, review all four perspectives in the current context. Otherwise, assign one independent reviewer to each perspective and run them concurrently. Use the same workflow in either case. Treat any remaining text as the review target.
+By default, review all four perspectives in the current context. If `high` appears immediately after the skill name, assign one independent reviewer to each perspective and run them concurrently; treat any remaining text as the review target. If parallel delegation is unavailable, use the default single-context behavior. Use the same workflow in either mode.
 
 If the invocation names a PR, branch, file, or other explicit target, review that target. Otherwise, use `git diff @{upstream}...HEAD`, falling back to `git diff main...HEAD` and then `git diff HEAD~1`. Include `git diff HEAD` when the working tree has changes or the range diff is empty. The resulting changes are the review scope.
 
