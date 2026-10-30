@@ -44,10 +44,24 @@ Wait until all four perspectives are complete. Merge findings that describe the 
 
 Apply only changes that preserve intended behavior. Skip a finding when its correction would alter intent, require broad work outside the review scope, or prove to be a false positive. Record every skip briefly.
 
-### Phase 3 — Check comments and summarize
+### Phase 3 — Purge comments
 
-Re-read the final diff and inspect every added or modified comment. Keep a comment only when it explains a non-obvious invariant, external constraint, surprising caveat, or why an apparently simpler alternative is invalid. PREFER ONE LINE.
+Target zero comments in the original diff or attached to changed code. Leave all others alone; cleanup does not expand scope.
 
-Remove comments that repeat readable code, narrate control flow or the current change, or duplicate information already expressed by names, signatures, or types. In tests, prefer an expressive test name unless the setup has non-obvious intent. Preserve directives and annotations consumed by tooling.
+Make comments unnecessary through clearer code. Otherwise, keep only those preventing a specific wrong change by explaining an external constraint, inexpressible invariant, or broken obvious alternative. One line max.
 
-Correct every comment violation before finishing. Then give a terse summary of the fixes and skips, or state that the reviewed code was already clean. Disclose whether the review used four independent reviewers in parallel or covered all four perspectives in the current context.
+Always delete:
+
+- comments that restate or narrate the code
+- docstrings that repeat the signature
+- banners
+- change history
+- commented-out code
+- `TODO`/`NOTE`/`FIXME` without a ticket
+- any comment in tests
+
+Keep tooling directives. When unsure, delete.
+
+### Phase 4 — Summarize
+
+Summarize fixes and skips, or say the code was already clean. Give the number of deleted comments and list each survivor as `file:line — reason`. State whether you used parallel reviewers or a single context.
