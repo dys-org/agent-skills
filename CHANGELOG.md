@@ -2,6 +2,14 @@
 
 All notable collection-level changes are recorded here. This project uses Semantic Versioning.
 
+## [0.4.0](https://github.com/dys-org/agent-skills/compare/v0.3.0...v0.4.0) (2026-10-30)
+
+
+### Features
+
+* aggressively purge comments in streamline ([#8](https://github.com/dys-org/agent-skills/issues/8)) ([f389510](https://github.com/dys-org/agent-skills/commit/f389510fda265c7a678271dc4dad1985a081faa8))
+* flag review comments more aggressively ([#10](https://github.com/dys-org/agent-skills/issues/10)) ([30357a1](https://github.com/dys-org/agent-skills/commit/30357a1d79bbb2e4e626e58638131d542f57ea25))
+
 ## [0.3.0](https://github.com/dys-org/agent-skills/compare/v0.2.2...v0.3.0) (2026-09-14)
 
 
