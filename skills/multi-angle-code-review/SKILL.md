@@ -7,6 +7,7 @@ disable-model-invocation: true
 # Multi-Angle Code Review
 
 ## Goal
+
 Review the current changeset across the applicable quality angles and return a concise, actionable summary tied to the changed code.
 
 ## Execution mode
@@ -42,7 +43,7 @@ Otherwise, gather both committed branch changes and working-tree changes:
 
 - Always run **code**
 - Run **tests** if test files changed or behavior changed
-- Run **comments** if comments or docs changed
+- Run **comments** if code, comments, or docs changed
 - Run **errors** if control flow, network, storage, async, or exception handling changed
 - Run **types** if types, interfaces, schemas, or validation changed
 - Run **simplify** if implementation code changed or the user explicitly asks for cleanup
@@ -73,18 +74,23 @@ Use this structure, omitting sections that have no useful content:
 ## Code Review Summary
 
 ### Critical Issues (X found)
+
 - [review-angle] Issue description [`path/to/file:line`]
 
 ### Important Issues (X found)
+
 - [review-angle] Issue description [`path/to/file:line`]
 
 ### Suggestions (X found)
+
 - [review-angle] Suggestion [`path/to/file:line`]
 
 ### Strengths
+
 - What the change does well
 
 ### Recommended Action
+
 - Concrete next step derived from the findings
 
 If there are no actionable findings, say so once instead of returning empty sections. Keep recommended actions specific to the findings and omit them when no action is needed.
@@ -93,11 +99,10 @@ If there are no actionable findings, say so once instead of returning empty sect
 
 ### comments
 
-- Flag comments that restate obvious code
-- Flag comments that appear inaccurate, stale, or overly detailed
-- Prefer fewer, higher-value comments over exhaustive narration
-- Check whether docs reflect the changed behavior
-- Suggest a rewrite or removal for each comment issue
+- Review comments and docs in the diff or attached to changed code.
+- Target zero comments. Flag anything beyond an irreplaceable one-line explanation of a constraint, invariant, or why the obvious alternative breaks. Tooling directives are exempt. When unsure, flag.
+- Flag inaccurate or stale comments and docs.
+- Recommend deletion, clearer code, or corrected wording for each finding.
 
 ### tests
 
@@ -142,7 +147,7 @@ The primary context owns the final judgment:
 
 1. Deduplicate overlapping findings by location, underlying issue, and remedy.
 2. Verify file and line references against the current workspace when practical.
-3. Drop vague, speculative, low-confidence, or purely stylistic findings.
+3. Drop vague, speculative, low-confidence, or purely stylistic findings; retain explicit comment-policy violations as suggestions.
 4. Preserve useful evidence when multiple angles identify the same issue.
 5. Order the remaining findings by severity and user impact.
 6. Produce one coherent report rather than disconnected reviewer outputs.
