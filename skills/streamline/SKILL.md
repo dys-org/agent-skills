@@ -1,18 +1,17 @@
 ---
 name: streamline
-description: Clean up changed code for clarity, reuse, and efficiency while preserving observable behavior. Use only when explicitly invoked for a quality-focused cleanup pass, not to find bugs.
-disable-model-invocation: true
+description: Improve code for clarity, reuse, and efficiency while preserving observable behavior. Use when asked to simplify or refactor specific code, or clean up changed code. Not for bug-finding or unsolicited cleanup.
 ---
 
 # Streamline
 
-Improve the changed code without altering its observable behavior. This is a quality-cleanup pass, not a correctness review. Do not fix behavior merely because it appears wrong.
+Improve the scoped code without altering its observable behavior. This is a quality-cleanup pass, not a correctness review. Do not fix behavior merely because it appears wrong.
 
 ## Route the review
 
 By default, review all four perspectives in the current context. If `high` appears immediately after the skill name, assign one independent reviewer to each perspective and run them concurrently; treat any remaining text as the review target. If parallel delegation is unavailable, use the default single-context behavior. Use the same workflow in either mode.
 
-If the invocation names a PR, branch, file, or other explicit target, review that target. Otherwise, use `git diff @{upstream}...HEAD`, falling back to `git diff main...HEAD` and then `git diff HEAD~1`. Include `git diff HEAD` when the working tree has changes or the range diff is empty. The resulting changes are the review scope.
+If the request names a PR, branch, file, function, snippet, or other explicit target, review only that target. Otherwise, use `git diff @{upstream}...HEAD`, falling back to `git diff main...HEAD` and then `git diff HEAD~1`. Include `git diff HEAD` when the working tree has changes or the range diff is empty. The resulting changes are the review scope.
 
 ### Phase 1 — Review
 
