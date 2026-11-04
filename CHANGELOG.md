@@ -2,6 +2,13 @@
 
 All notable collection-level changes are recorded here. This project uses Semantic Versioning.
 
+## [0.4.1](https://github.com/dys-org/agent-skills/compare/v0.4.0...v0.4.1) (2026-11-04)
+
+
+### Bug Fixes
+
+* consolidate automatic cleanup selection on streamline ([#11](https://github.com/dys-org/agent-skills/issues/11)) ([800a04e](https://github.com/dys-org/agent-skills/commit/800a04ef49691325c35f9f46448d18f40feebb23))
+
 ## [0.4.0](https://github.com/dys-org/agent-skills/compare/v0.3.0...v0.4.0) (2026-10-30)
 
 
