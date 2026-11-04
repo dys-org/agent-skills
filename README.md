@@ -4,13 +4,12 @@ Portable agent skills authored and maintained by dys-org. GitHub is the canonica
 
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
-| `code-simplifier` | Legacy focused refactoring; retained for reversible fallback. Prefer `streamline`. | Explicit only. |
 | `multi-angle-code-review` | Read-only review across code, tests, comments, errors, types, and simplification. | Explicit only. |
 | `plex-library-organizer` | Metadata-backed, approval-gated Plex library planning and organization. | Explicit only. |
 | `prose` | Draft, revise, or audit prose while removing common AI writing tropes. | Explicit only. |
 | `streamline` | Behavior-preserving refactoring and cleanup: reuse, simplification, efficiency, and abstraction depth. | Automatic or explicit. |
 
-`streamline` is the default workflow for both focused refactors and changeset-wide cleanup. It can be selected for natural-language requests or invoked with `/skill:streamline`. `code-simplifier` is disabled for automatic selection but remains available explicitly as a reversible fallback.
+`streamline` is the default workflow for both focused refactors and changeset-wide cleanup. It can be selected for natural-language requests or invoked with `/skill:streamline`.
 
 ## Install with Skills CLI
 
