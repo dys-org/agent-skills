@@ -4,13 +4,13 @@ Portable agent skills authored and maintained by dys-org. GitHub is the canonica
 
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
-| `code-simplifier` | Focused readability and complexity refactoring that preserves behavior. | May be invoked implicitly. |
+| `code-simplifier` | Legacy focused refactoring; retained for reversible fallback. Prefer `streamline`. | Explicit only. |
 | `multi-angle-code-review` | Read-only review across code, tests, comments, errors, types, and simplification. | Explicit only. |
 | `plex-library-organizer` | Metadata-backed, approval-gated Plex library planning and organization. | Explicit only. |
 | `prose` | Draft, revise, or audit prose while removing common AI writing tropes. | Explicit only. |
-| `streamline` | Explicit four-angle cleanup of changed code: reuse, simplification, efficiency, and altitude. | Explicit only. |
+| `streamline` | Behavior-preserving refactoring and cleanup: reuse, simplification, efficiency, and abstraction depth. | Automatic or explicit. |
 
-`code-simplifier` works on a specific readability or complexity refactor. `streamline` reviews an entire changeset through four cleanup angles and applies the resulting quality improvements.
+`streamline` is the default workflow for both focused refactors and changeset-wide cleanup. It can be selected for natural-language requests or invoked with `/skill:streamline`. `code-simplifier` is disabled for automatic selection but remains available explicitly as a reversible fallback.
 
 ## Install with Skills CLI
 
@@ -21,8 +21,8 @@ The commands below use the current [`skills` CLI](https://github.com/vercel-labs
 npx skills add dys-org/agent-skills --list
 
 # Install one or several skills into the current project
-npx skills add dys-org/agent-skills --skill code-simplifier
-npx skills add dys-org/agent-skills --skill code-simplifier --skill streamline
+npx skills add dys-org/agent-skills --skill streamline
+npx skills add dys-org/agent-skills --skill streamline --skill multi-angle-code-review
 npx skills add dys-org/agent-skills --skill prose
 
 # Choose agents, or install globally

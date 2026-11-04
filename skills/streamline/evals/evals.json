@@ -4,8 +4,10 @@
     {"id": 1, "prompt": "Streamline this branch for reuse, simplification, efficiency, and altitude, then apply safe fixes.", "expected_output": "Reviews all four angles in the current context, applies behavior-preserving fixes, and checks changed comments.", "files": []},
     {"id": 2, "prompt": "streamline high src/payment.ts", "expected_output": "Uses four parallel cleanup reviewers when available and consolidates their fixes for the targeted file.", "files": []},
     {"id": 3, "prompt": "streamline low src/payment.ts", "expected_output": "Uses the default single-context workflow and treats low src/payment.ts as the review target because low is not a mode argument.", "files": []},
-    {"id": 4, "prompt": "Refactor this one function to reduce nesting and give the variables clearer names.", "expected_output": "Should not select streamline; this is a focused code-simplifier task.", "files": []},
+    {"id": 4, "prompt": "Refactor this one function to reduce nesting and give the variables clearer names.", "expected_output": "Selects streamline automatically, checks all four angles within the named function only, and applies behavior-preserving simplifications without expanding to the whole changeset.", "files": []},
     {"id": 5, "prompt": "Review this PR for correctness bugs but do not edit anything.", "expected_output": "Should not select streamline; use a read-only review workflow.", "files": []},
-    {"id": 6, "prompt": "The diff is already clean. Run streamline and confirm that no safe quality changes are needed.", "expected_output": "Checks all four angles and comments, makes no speculative edits, and reports the clean result.", "files": []}
+    {"id": 6, "prompt": "The diff is already clean. Run streamline and confirm that no safe quality changes are needed.", "expected_output": "Checks all four angles and comments, makes no speculative edits, and reports the clean result.", "files": []},
+    {"id": 7, "prompt": "Clean up my changed code for clarity, reuse, and efficiency without changing behavior.", "expected_output": "Selects streamline automatically rather than code-simplifier, reviews the changed code through all four angles, and applies only behavior-preserving improvements.", "files": []},
+    {"id": 8, "prompt": "Explain how this function works. Do not change it.", "expected_output": "Does not select streamline or perform unsolicited cleanup; explains the function without edits.", "files": []}
   ]
 }

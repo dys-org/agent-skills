@@ -1,4 +1,6 @@
 interface:
   display_name: "Code Simplifier"
   short_description: "Simplify focused code while preserving behavior"
+policy:
+  allow_implicit_invocation: false
 
