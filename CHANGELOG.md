@@ -2,6 +2,13 @@
 
 All notable collection-level changes are recorded here. This project uses Semantic Versioning.
 
+## [0.5.0](https://github.com/dys-org/agent-skills/compare/v0.4.1...v0.5.0) (2026-11-21)
+
+
+### Features
+
+* remove parallel review modes from streamline and multi-angle-code-review ([#13](https://github.com/dys-org/agent-skills/issues/13)) ([b2e1b6a](https://github.com/dys-org/agent-skills/commit/b2e1b6abd73dbc5cbc99bea0edcb8beb178eaadd))
+
 ## [0.4.1](https://github.com/dys-org/agent-skills/compare/v0.4.0...v0.4.1) (2026-11-04)
 
 
