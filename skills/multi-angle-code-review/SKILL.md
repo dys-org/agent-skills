@@ -1,6 +1,6 @@
 ---
 name: multi-angle-code-review
-description: Run a comprehensive code review across multiple quality angles. Use when the user asks to review a PR, branch, diff, or recent changes; wants targeted feedback on tests, comments, error handling, types, simplification, or overall code quality; or explicitly requests a parallel, subagent, or orchestrated review. Prefer this skill for multi-aspect code review before opening a PR or after review feedback lands.
+description: Run a comprehensive code review across multiple quality angles. Use when the user asks to review a PR, branch, diff, or recent changes, or wants targeted feedback on tests, comments, error handling, types, simplification, or overall code quality. Prefer this skill for multi-aspect code review before opening a PR or after review feedback lands.
 disable-model-invocation: true
 ---
 
@@ -9,10 +9,6 @@ disable-model-invocation: true
 ## Goal
 
 Review the current changeset across the applicable quality angles and return a concise, actionable summary tied to the changed code.
-
-## Execution mode
-
-By default, review all applicable angles yourself in one integrated pass. If `high` appears immediately after the skill name, assign each applicable review angle to an independent reviewer and run them in parallel; treat any remaining text as the review target or angle selection. If parallel delegation is unavailable, use the default single-context behavior.
 
 ## Core principles
 
@@ -51,10 +47,6 @@ Otherwise, gather both committed branch changes and working-tree changes:
 ### 3. Execute the review angles
 
 Apply each angle's guidance to the relevant diff and nearby code. Read tests or documentation only as needed, and record material findings with severity and evidence.
-
-For parallel review, give each reviewer the review scope, changed files, repository constraints, the read-only requirement, and its angle-specific guidance. Do not repeat delegated angles in the primary context.
-
-If `high` requested delegation but it is unavailable, mention that the integrated review was used instead.
 
 ### 4. Severity rules
 
@@ -141,13 +133,13 @@ If there are no actionable findings, say so once instead of returning empty sect
 - Prefer removing unnecessary indirection, branches, and duplicated code
 - Keep recommendations grounded in the actual diff, not hypothetical rewrites
 
-## Consolidating delegated reviews
+## Consolidating findings
 
-The primary context owns the final judgment:
+Before reporting:
 
 1. Deduplicate overlapping findings by location, underlying issue, and remedy.
 2. Verify file and line references against the current workspace when practical.
 3. Drop vague, speculative, low-confidence, or purely stylistic findings; retain explicit comment-policy violations as suggestions.
 4. Preserve useful evidence when multiple angles identify the same issue.
 5. Order the remaining findings by severity and user impact.
-6. Produce one coherent report rather than disconnected reviewer outputs.
+6. Produce one coherent report rather than disconnected per-angle outputs.
