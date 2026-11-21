@@ -7,11 +7,11 @@ description: Improve code for clarity, reuse, and efficiency while preserving ob
 
 Improve the scoped code without altering its observable behavior. This is a quality-cleanup pass, not a correctness review. Do not fix behavior merely because it appears wrong.
 
-## Route the review
-
-By default, review all four perspectives in the current context. If `high` appears immediately after the skill name, assign one independent reviewer to each perspective and run them concurrently; treat any remaining text as the review target. If parallel delegation is unavailable, use the default single-context behavior. Use the same workflow in either mode.
+## Scope the review
 
 If the request names a PR, branch, file, function, snippet, or other explicit target, review only that target. Otherwise, use `git diff @{upstream}...HEAD`, falling back to `git diff main...HEAD` and then `git diff HEAD~1`. Include `git diff HEAD` when the working tree has changes or the range diff is empty. The resulting changes are the review scope.
+
+## Workflow
 
 ### Phase 1 — Review
 
@@ -39,7 +39,7 @@ Do not introduce correctness fixes, unrelated edits, or generic refactoring advi
 
 ### Phase 2 — Apply the fixes
 
-Wait until all four perspectives are complete. Merge findings that describe the same underlying mechanism, then apply each unique correction directly.
+After covering all four perspectives, merge findings that describe the same underlying mechanism, then apply each unique correction directly.
 
 Apply only changes that preserve intended behavior. Skip a finding when its correction would alter intent, require broad work outside the review scope, or prove to be a false positive. Record every skip briefly.
 
@@ -63,4 +63,4 @@ Keep tooling directives. When unsure, delete.
 
 ### Phase 4 — Summarize
 
-Summarize fixes and skips, or say the code was already clean. Give the number of deleted comments and list each survivor as `file:line — reason`. State whether you used parallel reviewers or a single context.
+Summarize fixes and skips, or say the code was already clean. Give the number of deleted comments and list each survivor as `file:line — reason`.
