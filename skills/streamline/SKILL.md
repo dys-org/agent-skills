@@ -1,6 +1,6 @@
 ---
 name: streamline
-description: Improve code for clarity, reuse, and efficiency while preserving observable behavior. Use when asked to simplify or refactor specific code, or clean up changed code. Not for bug-finding or unsolicited cleanup.
+description: Improve code for clarity, reuse, and efficiency while preserving observable behavior. Use when asked to simplify or refactor specific code, or clean up changed code. Not for read-only reviews, bug-finding, or unsolicited cleanup.
 ---
 
 # Streamline

@@ -2,4 +2,4 @@ interface:
   display_name: "Multi-Angle Code Review"
   short_description: "Review code across multiple quality angles"
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true

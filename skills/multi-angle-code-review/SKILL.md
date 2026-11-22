@@ -1,7 +1,6 @@
 ---
 name: multi-angle-code-review
-description: Run a comprehensive code review across multiple quality angles. Use when the user asks to review a PR, branch, diff, or recent changes, or wants targeted feedback on tests, comments, error handling, types, simplification, or overall code quality. Prefer this skill for multi-aspect code review before opening a PR or after review feedback lands.
-disable-model-invocation: true
+description: Read-only code review across code, tests, errors, types, comments, and simplification for a PR, branch, or diff. Use only when the user explicitly asks for a code review or another skill delegates a review to it. Not for editing, refactoring, debugging, explaining code, or unsolicited post-implementation checks.
 ---
 
 # Multi-Angle Code Review
