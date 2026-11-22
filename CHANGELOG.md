@@ -2,6 +2,13 @@
 
 All notable collection-level changes are recorded here. This project uses Semantic Versioning.
 
+## [0.6.0](https://github.com/dys-org/agent-skills/compare/v0.5.0...v0.6.0) (2026-11-22)
+
+
+### Features
+
+* allow model invocation for multi-angle-code-review ([#15](https://github.com/dys-org/agent-skills/issues/15)) ([c30350d](https://github.com/dys-org/agent-skills/commit/c30350da3c6aa08100e5b4b49f3d4ebf95cc3bd4))
+
 ## [0.5.0](https://github.com/dys-org/agent-skills/compare/v0.4.1...v0.5.0) (2026-11-21)
 
 
