@@ -4,7 +4,7 @@ Portable agent skills authored and maintained by dys-org. GitHub is the canonica
 
 | Skill | Purpose | Invocation |
 | --- | --- | --- |
-| `multi-angle-code-review` | Read-only review across code, tests, comments, errors, types, and simplification. | Explicit only. |
+| `multi-angle-code-review` | Read-only review across code, tests, comments, errors, types, and simplification. | Automatic or explicit. |
 | `plex-library-organizer` | Metadata-backed, approval-gated Plex library planning and organization. | Explicit only. |
 | `prose` | Draft, revise, or audit prose while removing common AI writing tropes. | Explicit only. |
 | `streamline` | Behavior-preserving refactoring and cleanup: reuse, simplification, efficiency, and abstraction depth. | Automatic or explicit. |

@@ -5,6 +5,8 @@
     {"id": 2, "prompt": "Review only the tests and error handling in this diff.", "expected_output": "A bounded read-only review emphasizing behavioral coverage and failure paths.", "files": []},
     {"id": 3, "prompt": "Simplify this deeply nested function and apply the refactor.", "expected_output": "Should not select this read-only review skill; use a focused simplification workflow.", "files": []},
     {"id": 4, "prompt": "Clean up my changed code for reuse, efficiency, simplification, and altitude, then apply fixes.", "expected_output": "Should not select this review skill; use streamline because fixes are requested.", "files": []},
-    {"id": 5, "prompt": "Review the diff. If no actionable issue remains, return a concise no-findings result without editing files.", "expected_output": "Inspects the diff and reports no actionable findings when appropriate without editing files.", "files": []}
+    {"id": 5, "prompt": "Review the diff. If no actionable issue remains, return a concise no-findings result without editing files.", "expected_output": "Inspects the diff and reports no actionable findings when appropriate without editing files.", "files": []},
+    {"id": 6, "prompt": "Explain what this diff is doing and how the error handler works.", "expected_output": "Should not select this review skill; answer the explanation request directly.", "files": []},
+    {"id": 7, "prompt": "I just fixed the auth bug—does this look reasonable?", "expected_output": "Should not trigger a full multi-angle review unless the user explicitly asks for a code review.", "files": []}
   ]
 }
